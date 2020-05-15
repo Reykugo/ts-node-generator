@@ -1,0 +1,25 @@
+{
+  "name": "ts-node-generator",
+  "version": "0.0.1",
+  "description": "generator tool for node api rest",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reykugo/ts-node-generator.git"
+  },
+  "author": "Guillaume NOUGIER",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reykugo/ts-node-generator/issues"
+  },
+  "homepage": "https://github.com/Reykugo/ts-node-generator#readme",
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "minimist": "^1.2.5",
+    "pluralize": "^8.0.0",
+    "replace": "^1.2.0"
+  }
+}
