@@ -1,0 +1,115 @@
+---
+openapi: 3.0.0
+
+tags:
+  - name: ..Generators..
+    description: Everything about ..Generators..
+
+paths:
+  /..generators..:
+    get:
+      tags:
+        - ..Generators..
+      summary: Get all ..Generators..
+      responses:
+        200:
+          description: return list of all ..generators..
+    post:
+      tags:
+        - ..Generators..
+      summary: Add a new ..generator.. to the store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/..Generator.."
+      responses:
+        200:
+          description: return created ..generator..
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/..Generator.."
+        400:
+          $ref: "#/components/responses/BadRequest"
+  /..generators../{id}:
+    get:
+      tags:
+        - ..Generators..
+      summary: Get a ..generator.. with a id
+      parameters:
+        - name: id
+          in: path
+          description: ..Generator.. ID
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Return a ..generator..
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/..Generator.."
+        404:
+          $ref: "#/components/responses/NotFound"
+    put:
+      tags:
+        - ..Generators..
+      summary: Update an existing ..generator..
+      parameters:
+        - name: id
+          in: path
+          description: ..Generator.. ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/..Generator.."
+      responses:
+        200:
+          description: Return updated ..generator..
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/..Generator.."
+        400:
+          $ref: "#/components/responses/BadRequest"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        404:
+          $ref: "#/components/responses/NotFound"
+    delete:
+      tags:
+        - ..Generators..
+      summary: Delete an existing ..generator..
+      parameters:
+        - name: id
+          in: path
+          description: ..generator.. ID
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+
+components:
+  schemas:
+    ..Generator..:
+      type: object
+      properties:
+        id:
+          type: string
+      required:
+        - id
